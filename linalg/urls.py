@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.linalg_menu, name='linalg_menu'),
+    url(r'^ascArt/$', views.linalg_asciiArt, name='linalg_asciiArt'),
 ]
