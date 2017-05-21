@@ -6,13 +6,9 @@
     <h4>
         {{mat}}
     </h4>
-    <div>
-        <form action="/matPage/" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
+    <h4>
+        Hello {{yname}}
+    </h4>
 
     <p><a href="/">Home</a></p>    
 {% endblock %}
