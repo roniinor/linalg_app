@@ -7,6 +7,8 @@ def linalg_menu(request):
 def linalg_asciiArt(request):
     return render(request, 'linalg/ascArt.html', {'art': improc4.strPic()})
     
+def linalg_matPage(request):
+    return render(request, 'linalg/matPage.html', {'mat': improc4.matrixFunction()})
 
 def get_a_number():
     return 14;

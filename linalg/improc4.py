@@ -4,9 +4,15 @@ from django.conf import settings
 
 def ascPixel(p):
     if (p < 192):
-        return "X"
+        if (p < 127):
+            if (p < 64):
+                return "X"
+            else:
+                return "I"
+        else:
+            return "-"
     else:
-        return "-"
+        return "."
         
 def strPic():
 
@@ -22,6 +28,10 @@ def strPic():
         strPicture += "</br>"
     
     return strPicture
+    
+    
+def matrixFunction():
+    return "some other matrix function - placeholder for now"
 
 if __name__ == '__main__':
     print(strPic())
