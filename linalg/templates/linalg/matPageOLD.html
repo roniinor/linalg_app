@@ -1,0 +1,21 @@
+{% extends 'linalg/page_base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h2>Some other matrix operation example page</h2>
+    <h4>
+        {{mat}}
+    </h4>
+    <div>
+        <form action="/matPage/" method="post">
+            {% csrf_token %}
+            <table>
+            {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit" />
+        </form>
+        {{marks}}
+    </div>
+
+    <p><a href="/">Home</a></p>    
+{% endblock %}

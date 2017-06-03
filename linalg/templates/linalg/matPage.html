@@ -9,9 +9,37 @@
     <div>
         <form action="/matPage/" method="post">
             {% csrf_token %}
-            {{ form }}
+            {# Include the hidden fields #}
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                        {# Include the visible fields #}
+                        {% for field in form.visible_fields %}
+                            <tr class="fieldWrapper" style="height:30px"><td>
+                                {{ field.errors }}
+                                {{ field.label_tag }} {{ field }}
+                            </td></tr>
+                        {% endfor %}
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                        {% for mark in marks %}
+                            <tr style="height:30px"><td>
+                                {{ mark }}
+                            </td></tr>
+                        {% endfor %}
+                        </table>
+                    </td>
+                </tr>
+            </table>
             <input type="submit" value="Submit" />
         </form>
+        
     </div>
 
     <p><a href="/">Home</a></p>    
